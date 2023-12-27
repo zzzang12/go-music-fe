@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
-const CardContainer = () => {
+const CardContainer = ({ location, isPromotion, showBuyModal }) => {
+  location = 'cards.json';
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/cards.json`)
+    fetch(`${process.env.PUBLIC_URL}/${location}`)
     .then((res) => res.json())
     .then((result) => setCards(result));
   }, []);
 
   const cardItems = cards.map((card) => {
-    return <Card key={card.id} img={card.img} imgAlt={card.imgAlt} desc={card.desc} price={card.price}
-                 productName={card.productName}/>;
+    return <Card key={card.id} {...card} isPromotion={isPromotion} showBuyModal={showBuyModal}/>;
   });
 
   return (
