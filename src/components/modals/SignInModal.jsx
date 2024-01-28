@@ -25,6 +25,10 @@ const SignInModal = ({ showSignInModal, toggleSignInModal }) => {
   const handleSignIn = () => {
     console.log('handleSignIn');
     console.log(input);
+    localStorage.setItem('userInfo', JSON.stringify({
+      'email'   : input.email,
+      'nickname': 'zzang12'
+    }));
     setIsSignedIn(true);
     toggleSignInModal();
   };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Order from '../Order';
+import LoadUserInfo from '../../utils/LoadUserInfo';
 
 const OrderPage = () => {
   const [orders, setOrders] = useState([{
@@ -19,6 +20,8 @@ const OrderPage = () => {
     imgAlt     : 'imgAlt2',
     img        : 'images/redguitar.jpeg'
   }]);
+
+  LoadUserInfo();
 
   return (
     <div className="mt-5" id="body">

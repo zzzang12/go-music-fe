@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product';
+import LoadUserInfo from '../../utils/LoadUserInfo';
 
 const ProductPage = () => {
   const [cards, setCards] = useState([]);
+
+  LoadUserInfo();
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/cards.json`)

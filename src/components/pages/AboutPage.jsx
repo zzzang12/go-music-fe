@@ -1,4 +1,8 @@
+import LoadUserInfo from '../../utils/LoadUserInfo';
+
 const AboutPage = () => {
+  LoadUserInfo();
+
   return (
     <div className="mt-5" id="body">
       <h3 className="mb-4">About the Go Music Store</h3>

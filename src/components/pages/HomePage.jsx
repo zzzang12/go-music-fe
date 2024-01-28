@@ -1,4 +1,8 @@
+import LoadUserInfo from '../../utils/LoadUserInfo';
+
 const HomePage = () => {
+  LoadUserInfo();
+  
   return (
     <div id="body">
       <img src="/images/goMusic.png" alt="not found"/>

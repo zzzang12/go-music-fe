@@ -1,4 +1,8 @@
+import LoadUserInfo from '../../utils/LoadUserInfo';
+
 const NotFoundPage = () => {
+  LoadUserInfo();
+  
   return (
     <div id="body">
       <img src="/images/notFound.png" alt="not found"/>
