@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "productName": "productName1",
+    "price": "1",
+    "desc": "description1",
+    "days": "1",
+    "imgAlt": "imgAlt1",
+    "img": "images/strings.png"
+  },
+  {
+    "id": 2,
+    "productName": "productName2",
+    "price": "2",
+    "desc": "description2",
+    "days": "2",
+    "imgAlt": "imgAlt2",
+    "img": "images/redguitar.jpeg"
+  }
+]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Order from '../Order';
 import LoadUserInfo from '../../utils/LoadUserInfo';
 
@@ -20,6 +20,12 @@ const OrderPage = () => {
     imgAlt     : 'imgAlt2',
     img        : 'images/redguitar.jpeg'
   }]);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/orders.json`)
+    .then((res) => res.json())
+    .then((result) => setOrders(result));
+  }, []);
 
   LoadUserInfo();
 
