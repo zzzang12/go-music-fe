@@ -9,7 +9,7 @@ const OrderPage = () => {
     desc       : 'description1',
     days       : '1',
     imgAlt     : 'imgAlt1',
-    img        : '??'
+    img        : 'images/strings.png'
   }, {
     id         : 2,
     productName: 'productName2',
@@ -17,7 +17,7 @@ const OrderPage = () => {
     desc       : 'description2',
     days       : '2',
     imgAlt     : 'imgAlt2',
-    img        : '??'
+    img        : 'images/redguitar.jpeg'
   }]);
 
   return (

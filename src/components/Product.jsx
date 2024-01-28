@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap';
+import { Button, Card, CardBody, CardHeader, CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 import BuyModal from './modals/BuyModal';
 
 const Product = ({ img, imgAlt, desc, price, productName }) => {
@@ -15,9 +15,9 @@ const Product = ({ img, imgAlt, desc, price, productName }) => {
         <CardBody>
           <CardTitle tag="h4">{productName}</CardTitle>
           <CardSubtitle>Price: {price}</CardSubtitle>
+          <CardImg src={img} alt={imgAlt} top width="100%"/>
+          <CardText>{desc}</CardText>
         </CardBody>
-        <img src={img} alt={imgAlt}/>
-        <CardBody>{desc}</CardBody>
         <Button color="success" size="lg" className="mb-3" onClick={toggleBuyModal}>Buy</Button>
       </Card>
 

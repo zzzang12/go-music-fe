@@ -1,28 +1,18 @@
+import { Card, CardBody, CardFooter, CardHeader, CardImg, CardText } from 'reactstrap';
+
 const Order = ({ productName, img, imgAlt, desc, price, days }) => {
   return (
-    <div>
-      <div className="card text-center">
-        <div className="card-header">
-          <h5>{productName}</h5>
+    <Card className="text-center">
+      <CardHeader className="h5">{productName}</CardHeader>
+      <CardBody className="row">
+        <div className="mx-auto col-6">
+          <CardImg src={img} alt={imgAlt} className="float-start" style={{ width: '80%' }}/>
         </div>
-        <div className="card-body">
-          <div className="row">
-            <div className="mx-auto col-6">
-              <img src={img} alt={imgAlt} className="img-thumbnail float-start"/>
-            </div>
-            <div className="col-6">
-              <p className="card-text">{desc}</p>
-            </div>
-            <div className="mt-4">
-              Price: {price}
-            </div>
-          </div>
-        </div>
-        <div className="card-footer text-muted">
-          Purchased {days} days ago
-        </div>
-      </div>
-    </div>
+        <CardText className="col-6">{desc}</CardText>
+        <CardText className="mt-4">Price: {price}</CardText>
+      </CardBody>
+      <CardFooter className="text-muted">Purchased {days} days ago</CardFooter>
+    </Card>
   );
 };
 
