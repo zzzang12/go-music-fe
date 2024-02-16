@@ -3,31 +3,15 @@ import Order from '../Order';
 import LoadUserInfo from '../../utils/LoadUserInfo';
 
 const OrderPage = () => {
-  const [orders, setOrders] = useState([{
-    id         : 1,
-    productName: 'productName1',
-    price      : '1',
-    desc       : 'description1',
-    days       : '1',
-    imgAlt     : 'imgAlt1',
-    img        : 'images/strings.png'
-  }, {
-    id         : 2,
-    productName: 'productName2',
-    price      : '2',
-    desc       : 'description2',
-    days       : '2',
-    imgAlt     : 'imgAlt2',
-    img        : 'images/redguitar.jpeg'
-  }]);
+  const [orders, setOrders] = useState([]);
+
+  LoadUserInfo();
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/orders.json`)
     .then((res) => res.json())
     .then((result) => setOrders(result));
   }, []);
-
-  LoadUserInfo();
 
   return (
     <div className="mt-5" id="body">

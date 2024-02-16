@@ -5,7 +5,7 @@ import SignInModal from './modals/SignInModal';
 import SignOutButton from './SignOutButton';
 
 const Header = () => {
-  const { isSignedIn, setIsSignedIn } = useContext(Context);
+  const { isSignedIn, userInfo } = useContext(Context);
   const [showSignInModal, setShowSignInModal] = useState(false);
 
   const toggleSignInModal = () => {
@@ -31,7 +31,7 @@ const Header = () => {
         </Nav>
         {isSignedIn ?
           <div className="ms-auto d-flex align-items-center">
-            <div className="fs-5 text-white">Welcome, {JSON.parse(localStorage.getItem('userInfo')).nickname}</div>
+            <div className="fs-5 text-white">Welcome, {userInfo.nickname}</div>
             <SignOutButton/>
           </div> :
           <Button className="ms-auto" color="success" size="lg" onClick={toggleSignInModal}>Sign In</Button>

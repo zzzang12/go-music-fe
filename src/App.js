@@ -10,9 +10,11 @@ import Header from './components/Header';
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
   return (
     <div className="App">
-      <Context.Provider value={{ isSignedIn, setIsSignedIn }}>
+      <Context.Provider value={{ isSignedIn, setIsSignedIn, userInfo }}>
         <BrowserRouter>
           <Header/>
           <Routes>
